@@ -1,0 +1,23 @@
+.app {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.app__buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.app__buttons button {
+  padding: 8px 16px;
+  background: #f0f0f0;
+  border: 1px solid #999;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.app__buttons button:hover {
+  background: #e5e5e5;
+}
