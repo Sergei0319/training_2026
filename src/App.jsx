@@ -1,39 +1,26 @@
-import { useState } from 'react';
-import UserCard from './components/UserCard/UserCard';
-import './App.css';
+import './App.css'
+import UserCard from "./components/UserCard/UserCard.jsx";
 
-const COLORS = ['#d4edda', '#cce5ff', '#f8d7da', '#fff3cd', '#e2d5f1'];
+const users = [
+    { id: 1, name: 'Анна', age: 22, email: 'anna@example.com' },
+    { id: 2, name: 'Сергей', age: 36, email: 'worksergey2023@gmail.com' },
+    { id: 3, name: 'Мария', age: 27, email: 'maria@example.com' },
+]
 
 function App() {
-  const [age, setAge] = useState(29);
-  const [color, setColor] = useState(COLORS[0]);
+    return (
+        <div className="app">
+            <h1 className="app__title">Пользователи</h1>
+            <div className="users-list">
+                {users.map((user) => (
+                    <UserCard key={user.id} user={user} />
+                ))}
+            </div>
+        </div>
+    )
 
-  const handleAgeChange = () => {
-    setAge((prev) => prev + 1);
-  };
+  }
 
-  const handleColorChange = () => {
-    setColor((prev) => {
-      const currentIndex = COLORS.indexOf(prev);
-      const nextIndex = (currentIndex + 1) % COLORS.length;
-      return COLORS[nextIndex];
-    });
-  };
 
-  return (
-    <div className="app">
-      <div className="app__buttons">
-        <button type="button" onClick={handleAgeChange}>
-          Изменить возраст
-        </button>
-        <button type="button" onClick={handleColorChange}>
-          Изменить цвет карточки
-        </button>
-      </div>
-
-      <UserCard name="Иван Петров" age={age} color={color} />
-    </div>
-  );
-}
 
 export default App;

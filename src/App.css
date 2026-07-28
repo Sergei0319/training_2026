@@ -1,23 +1,20 @@
 .app {
-  padding: 20px;
-  font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(160deg, #5b21b6 0%, #7c3aed 45%, #4c1d95 100%);
+    padding: 2rem;
+    box-sizing: border-box;
 }
-
-.app__buttons {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 20px;
+.app__title {
+    color: #f5f3ff;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
 }
-
-.app__buttons button {
-  padding: 8px 16px;
-  background: #f0f0f0;
-  border: 1px solid #999;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.app__buttons button:hover {
-  background: #e5e5e5;
+.users-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    justify-content: center;
+    max-width: 960px;
+    margin: 0 auto;
 }

@@ -1,14 +1,13 @@
-import './UserCard.css';
+import styles from './UserCard.module.css'
 
-function UserCard({ name, age, color }) {
-  console.log('Ререндер UserCard');
-
-  return (
-    <div className="user-card" style={{ backgroundColor: color }}>
-      <h2 className="user-card__name">{name}</h2>
-      <p className="user-card__age">Возраст: {age}</p>
-    </div>
-  );
+const UserCard = ({ user }) => {
+    const { name, age, email } = user;
+    return (
+        <article className={styles['user-card']}>
+            <h3>{name}</h3>
+            <p>Возраст: {age}</p>
+            <p>Email: {email}</p>
+        </article>
+    )
 }
-
 export default UserCard;
