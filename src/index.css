@@ -5,6 +5,8 @@
 }
 
 body {
-  background-color: #fff;
-  padding: 40px;
+  background-color: #f8fafc;
+  padding: 32px 24px;
+  color: #0f172a;
+  line-height: 1.5;
 }

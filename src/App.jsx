@@ -1,39 +1,53 @@
-import { useState } from 'react';
-import UserCard from './components/UserCard/UserCard';
-import './App.css';
-
-const COLORS = ['#d4edda', '#cce5ff', '#f8d7da', '#fff3cd', '#e2d5f1'];
+import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom'
+import Home from './components/Home'
+import About from './components/About'
+import Contacts from './components/Contacts'
+import './App.css'
 
 function App() {
-  const [age, setAge] = useState(29);
-  const [color, setColor] = useState(COLORS[0]);
+    return (
+        <Router>
+            <div className="app">
+                <header className="app__header">
+                    <nav className="app__nav" aria-label="Основное меню">
+                        <NavLink
+                            to="/"
+                            end
+                            className={({ isActive }) =>
+                                `app__nav-link${isActive ? ' app__nav-link--active' : ''}`
+                            }
+                        >
+                            Главная
+                        </NavLink>
+                        <NavLink
+                            to="/about"
+                            className={({ isActive }) =>
+                                `app__nav-link${isActive ? ' app__nav-link--active' : ''}`
+                            }
+                        >
+                            О нас
+                        </NavLink>
+                        <NavLink
+                            to="/contacts"
+                            className={({ isActive }) =>
+                                `app__nav-link${isActive ? ' app__nav-link--active' : ''}`
+                            }
+                        >
+                            Контакты
+                        </NavLink>
+                    </nav>
+                </header>
 
-  const handleAgeChange = () => {
-    setAge((prev) => prev + 1);
-  };
-
-  const handleColorChange = () => {
-    setColor((prev) => {
-      const currentIndex = COLORS.indexOf(prev);
-      const nextIndex = (currentIndex + 1) % COLORS.length;
-      return COLORS[nextIndex];
-    });
-  };
-
-  return (
-    <div className="app">
-      <div className="app__buttons">
-        <button type="button" onClick={handleAgeChange}>
-          Изменить возраст
-        </button>
-        <button type="button" onClick={handleColorChange}>
-          Изменить цвет карточки
-        </button>
-      </div>
-
-      <UserCard name="Иван Петров" age={age} color={color} />
-    </div>
-  );
+                <main className="app__main">
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/contacts" element={<Contacts />} />
+                    </Routes>
+                </main>
+            </div>
+        </Router>
+    )
 }
 
-export default App;
+export default App
