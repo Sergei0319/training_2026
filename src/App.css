@@ -1,0 +1,58 @@
+.app {
+	min-height: 100vh;
+	padding: 2rem;
+	font-family: 'Times New Roman', Times, serif;
+	background: #fff;
+	color: #000;
+}
+
+.app h1 {
+	margin: 0 0 1.25rem;
+	font-size: 1.75rem;
+	font-weight: 400;
+}
+
+.user-panel {
+	max-width: 28rem;
+	padding: 1rem 1.25rem 1.25rem;
+	border: 1px solid #000;
+}
+
+.user-panel h2 {
+	margin: 0 0 0.75rem;
+	font-size: 1.25rem;
+	font-weight: 400;
+}
+
+.auth-controls {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.auth-controls__greeting {
+	margin: 0 0 0.5rem;
+	width: 100%;
+	font-size: 1rem;
+}
+
+.auth-controls input {
+	padding: 0.2rem 0.35rem;
+	font: inherit;
+	border: 1px solid #767676;
+	border-radius: 2px;
+}
+
+.auth-controls button {
+	padding: 0.2rem 0.6rem;
+	font: inherit;
+	cursor: pointer;
+	border: 1px solid #767676;
+	border-radius: 2px;
+	background: #f0f0f0;
+}
+
+.auth-controls button:hover {
+	background: #e4e4e4;
+}
