@@ -1,0 +1,28 @@
+.app {
+	min-height: 100vh;
+	padding: 2rem;
+	font-family: system-ui, sans-serif;
+	background: #fff;
+	color: #111;
+}
+
+.app h1 {
+	margin: 0 0 1rem;
+	font-size: 1.5rem;
+}
+
+.app p {
+	margin: 0 0 1rem;
+	font-size: 1.125rem;
+}
+
+.stopwatch-controls {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.app button {
+	padding: 0.4rem 0.75rem;
+	font-size: 1rem;
+	cursor: pointer;
+}
