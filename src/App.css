@@ -1,0 +1,38 @@
+.app {
+	min-height: 100vh;
+	padding: 2rem;
+	font-family: system-ui, sans-serif;
+	background: #ffffff;
+	color: #111;
+}
+
+.user-search h1 {
+	margin: 0 0 1rem;
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+.user-search input {
+	display: block;
+	width: min(100%, 28rem);
+	padding: 0.55rem 0.7rem;
+	margin-bottom: 1rem;
+	border: 1px solid #8a8a8a;
+	border-radius: 2px;
+	font-size: 1rem;
+}
+
+.user-search ul {
+	margin: 0 0 1.25rem;
+	padding-left: 1.5rem;
+	line-height: 1.6;
+}
+
+.user-search button {
+	padding: 0.45rem 0.75rem;
+	border: 1px solid #767676;
+	border-radius: 4px;
+	background: #f0f0f0;
+	cursor: pointer;
+	font-size: 0.95rem;
+}
