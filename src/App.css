@@ -1,0 +1,32 @@
+.app {
+	min-height: 100vh;
+	padding: 2rem;
+	background: #fff;
+	color: #111;
+	font-family: Georgia, 'Times New Roman', serif;
+}
+
+.app h1 {
+	margin: 0 0 1rem;
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+.app button {
+	display: block;
+	margin: 0.75rem 0;
+	padding: 0.35rem 0.7rem;
+	border: 1px solid #000;
+	border-radius: 2px;
+	background: #e6e6e6;
+	color: #000;
+	font-family: system-ui, sans-serif;
+	font-size: 0.9rem;
+	cursor: pointer;
+}
+
+.quote-viewer__text {
+	margin: 1rem 0;
+	font-style: italic;
+	font-size: 1.15rem;
+}
