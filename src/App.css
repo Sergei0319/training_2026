@@ -12,11 +12,16 @@
 	font-weight: 700;
 }
 
+.tabs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-bottom: 0.75rem;
+}
+
 .app button {
-	display: block;
-	margin: 0.75rem 0;
 	padding: 0.35rem 0.7rem;
-	border: 1px solid #000;
+	border: 1px solid #8a8a8a;
 	border-radius: 2px;
 	background: #e6e6e6;
 	color: #000;
@@ -25,8 +30,17 @@
 	cursor: pointer;
 }
 
-.quote-viewer__text {
-	margin: 1rem 0;
-	font-style: italic;
-	font-size: 1.15rem;
+.error-fallback {
+	margin-top: 0.25rem;
+	padding: 0.6rem 0.75rem;
+	border: 1px solid #c00;
+}
+
+.error-fallback p {
+	margin: 0 0 0.5rem;
+	font-weight: 700;
+}
+
+.error-fallback button {
+	display: block;
 }
