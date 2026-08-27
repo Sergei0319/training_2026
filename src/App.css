@@ -12,11 +12,14 @@
 	font-weight: 700;
 }
 
-.tabs {
+.app p {
+	margin: 0 0 0.75rem;
+}
+
+.counter-buttons {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 0.5rem;
-	margin-bottom: 0.75rem;
+	gap: 0.35rem;
 }
 
 .app button {
@@ -28,19 +31,4 @@
 	font-family: system-ui, sans-serif;
 	font-size: 0.9rem;
 	cursor: pointer;
-}
-
-.error-fallback {
-	margin-top: 0.25rem;
-	padding: 0.6rem 0.75rem;
-	border: 1px solid #c00;
-}
-
-.error-fallback p {
-	margin: 0 0 0.5rem;
-	font-weight: 700;
-}
-
-.error-fallback button {
-	display: block;
 }
