@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap');
+
+:root {
+  --bg-0: #e8f1ef;
+  --bg-1: #f4faf8;
+  --ink: #14302b;
+  --ink-soft: #3d5c55;
+  --line: #c5d9d3;
+  --accent: #0f7a66;
+  --accent-hover: #0b5f4f;
+  --danger: #b42318;
+  --danger-bg: #fef3f2;
+  --surface: rgba(255, 255, 255, 0.72);
+  --shadow: 0 12px 40px rgba(20, 48, 43, 0.08);
+  --radius: 14px;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Manrope', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse 80% 50% at 10% -10%, #b8e0d6 0%, transparent 55%),
+    radial-gradient(ellipse 60% 40% at 100% 0%, #d4ebe4 0%, transparent 50%),
+    linear-gradient(165deg, var(--bg-0), var(--bg-1) 60%, #dff0eb);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app {
+  width: min(720px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 3rem 0 4rem;
+  animation: fade-up 0.45s ease both;
+}
+
+.app__title {
+  margin: 0 0 1.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.contact-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: stretch;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+}
+
+.contact-form__fields {
+  display: flex;
+  flex: 1 1 280px;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.field {
+  flex: 1 1 140px;
+  min-width: 0;
+  padding: 0.75rem 0.9rem;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field::placeholder {
+  color: #7a9690;
+}
+
+.field:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(15, 122, 102, 0.18);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.15rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.15s ease, opacity 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn--primary {
+  flex: 0 0 auto;
+  color: #fff;
+  background: var(--accent);
+}
+
+.btn--primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn--danger {
+  color: var(--danger);
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.btn--danger:hover {
+  background: var(--danger-bg);
+  border-color: #fecdca;
+}
+
+.form-error {
+  flex-basis: 100%;
+  margin: 0;
+  padding: 0.55rem 0.75rem;
+  color: var(--danger);
+  background: var(--danger-bg);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  animation: shake 0.35s ease;
+}
+
+.search-bar {
+  margin-bottom: 1.25rem;
+}
+
+.search-bar .field {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: var(--surface);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.contact-list__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  animation: fade-up 0.3s ease both;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-list__item:hover {
+  border-color: #9fc4bb;
+  transform: translateY(-1px);
+}
+
+.contact-list__info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.65rem;
+  min-width: 0;
+  align-items: baseline;
+}
+
+.contact-list__name {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.contact-list__sep {
+  color: #8aa89f;
+}
+
+.contact-list__phone {
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.contact-list__empty {
+  margin: 0.5rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  75% {
+    transform: translateX(4px);
+  }
+}
+
+@media (max-width: 560px) {
+  .app {
+    padding-top: 2rem;
+  }
+
+  .contact-form {
+    flex-direction: column;
+  }
+
+  .btn--primary {
+    width: 100%;
+  }
+}
