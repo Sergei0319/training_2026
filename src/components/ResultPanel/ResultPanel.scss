@@ -1,0 +1,107 @@
+/* Панель результата: шапка со статусом, pill успех/ошибка, сводка и блок сырого JSON. */
+
+.result-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.result-head__actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-shrink: 0;
+}
+
+.result-head__close {
+  width: 1.85rem;
+  height: 1.85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--oki-muted);
+  font: inherit;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+
+.result-head__close:hover {
+  background: #f1f5f9;
+  color: var(--oki-ink);
+  border-color: var(--oki-line);
+}
+
+.result-head__close:focus-visible {
+  outline: 2px solid var(--oki-primary);
+  outline-offset: 1px;
+}
+
+.result-head .panel__title {
+  margin-bottom: 0;
+}
+
+.pill {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+}
+
+.pill--ok {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.pill--err {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.result-meta {
+  margin: 0.35rem 0 0.1rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.result-meta__sep {
+  margin: 0 0.3rem;
+}
+
+.result-summary {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  color: var(--ink);
+}
+
+.raw-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin: 0.45rem 0 0.2rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.raw-json {
+  margin: 0;
+  padding: 0.6rem 0.7rem;
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 8px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  line-height: 1.4;
+  overflow-x: auto;
+  max-height: 240px;
+}

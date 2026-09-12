@@ -1,0 +1,181 @@
+/* Редактор ключ–значение: строки, группы, select «добавить поле», свёрнутая справка. */
+.kv-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  cursor: default;
+}
+
+.kv-fields__lead {
+  margin: 0 0 0.15rem;
+  font-size: 0.78rem;
+}
+
+.kv-fields__mode {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.15rem;
+}
+
+.kv-fields__mode-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--oki-ink);
+}
+
+.kv-fields__mode-select {
+  font: inherit;
+  font-size: 0.86rem;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid var(--oki-line);
+  border-radius: 8px;
+  background: var(--oki-surface);
+  color: var(--oki-ink);
+  width: 100%;
+  cursor: pointer;
+}
+
+.kv-fields__mode-select:focus {
+  outline: none;
+  border-color: var(--oki-primary);
+  box-shadow: 0 0 0 2px rgba(30, 136, 229, 0.12);
+}
+
+.kv-fields__group {
+  margin: 0.35rem 0 0.1rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--oki-muted);
+}
+
+.kv-fields__row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.5rem 0.55rem;
+  background: #f8fafc;
+  border: 1px solid var(--oki-line);
+  border-radius: 8px;
+}
+
+.kv-fields__row-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem;
+}
+
+.kv-fields__key {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--oki-ink);
+  line-height: 1.25;
+}
+
+.kv-fields__remove {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--oki-muted);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.kv-fields__remove:hover:not(:disabled) {
+  background: #fee2e2;
+  color: #b91c1c;
+  border-color: #fecaca;
+}
+
+.kv-fields__input {
+  font: inherit;
+  font-size: 0.86rem;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid var(--oki-line);
+  border-radius: 6px;
+  background: var(--oki-surface);
+  color: var(--oki-ink);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.kv-fields__input--error {
+  border-color: var(--danger);
+  background: #fff8f8;
+}
+
+.kv-fields__api-key {
+  font-size: 0.7rem;
+  color: var(--oki-muted);
+}
+
+.kv-fields__add {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.15rem;
+}
+
+.kv-fields__add-label {
+  font-size: 0.78rem;
+  color: var(--oki-muted);
+}
+
+.kv-fields__add-select {
+  font: inherit;
+  font-size: 0.86rem;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid var(--oki-line);
+  border-radius: 8px;
+  background: var(--oki-surface);
+  color: var(--oki-ink);
+  width: 100%;
+  cursor: pointer;
+}
+
+.kv-fields__add-select:focus {
+  outline: none;
+  border-color: var(--oki-primary);
+  box-shadow: 0 0 0 2px rgba(30, 136, 229, 0.12);
+}
+
+.kv-fields__all {
+  margin: 0.25rem 0 0;
+  font-size: 0.78rem;
+}
+
+.kv-fields__catalog {
+  margin-top: 0.25rem;
+  font-size: 0.78rem;
+}
+
+.kv-fields__catalog-summary {
+  cursor: pointer;
+  color: var(--oki-muted);
+  user-select: none;
+}
+
+.kv-fields__catalog-list {
+  margin: 0.35rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--oki-muted);
+}
+
+.kv-fields__catalog-list li {
+  margin-bottom: 0.2rem;
+}
+
+.kv-fields__catalog-list code {
+  font-size: 0.72rem;
+}
