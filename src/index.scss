@@ -1,0 +1,63 @@
+/* Глобальные стили: Sass/SCSS и токены (экзамен 2.2, стилизация). */
+
+@use './styles/tokens' as *;
+
+:root {
+  --oki-page: #{$oki-page};
+  --oki-surface: #{$oki-surface};
+  --oki-ink: #{$oki-ink};
+  --oki-muted: #{$oki-muted};
+  --oki-primary: #{$oki-primary};
+  --oki-primary-hover: #{$oki-primary-hover};
+  --oki-line: #{$oki-line};
+  --oki-line-strong: #cfd6e4;
+  --oki-shadow-sm: 0 1px 2px rgba(28, 33, 48, 0.06);
+  --oki-shadow-md: 0 4px 14px rgba(28, 33, 48, 0.08);
+  --oki-bar: #{$oki-surface};
+  --page: var(--oki-page);
+  --card: var(--oki-surface);
+  --card-border: var(--oki-line);
+  --ink: var(--oki-ink);
+  --muted: var(--oki-muted);
+  --accent: var(--oki-primary);
+  --accent-hover: var(--oki-primary-hover);
+  --danger: #{$oki-danger};
+  --danger-bg: #ffebee;
+  --sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --mono: ui-monospace, 'Cascadia Code', Consolas, monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--oki-ink);
+  background: var(--oki-page);
+}
+
+#root {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.25rem 2.5rem;
+}
+
+a {
+  color: var(--oki-primary);
+
+  &:hover {
+    color: var(--oki-primary-hover);
+  }
+}
