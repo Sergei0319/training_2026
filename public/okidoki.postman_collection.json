@@ -1,0 +1,733 @@
+{
+  "info": {
+    "_postman_id": "fc410ef4-e092-4237-80c6-ac3189c4ec84",
+    "name": "2025 OKIDOKI",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "38598493"
+  },
+  "item": [
+    {
+      "name": "Получение информации по юзеру",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.doki.online/support/user/info?phone_number={{phoneNumber}}",
+          "protocol": "https",
+          "host": [
+            "api",
+            "doki",
+            "online"
+          ],
+          "path": [
+            "support",
+            "user",
+            "info"
+          ],
+          "query": [
+            {
+              "key": "phone_number",
+              "value": "{{phoneNumber}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Запрос информации по договору",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.doki.online/support/contract/info?contract_id={{contractId}}",
+          "protocol": "https",
+          "host": [
+            "api",
+            "doki",
+            "online"
+          ],
+          "path": [
+            "support",
+            "contract",
+            "info"
+          ],
+          "query": [
+            {
+              "key": "contract_id",
+              "value": "{{contractId}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Добавления баланса в единицах к пакету",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"phone_number\": \"{{phoneNumber}}\",\r\n  \"prepaid_contracts_count\": {{prepaidContractsCount}}\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.doki.online/support/user/add-bonus",
+          "protocol": "https",
+          "host": [
+            "api",
+            "doki",
+            "online"
+          ],
+          "path": [
+            "support",
+            "user",
+            "add-bonus"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Добавления подписки в днях",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"phone_number\": \"{{phoneNumber}}\",\r\n  \"days\": {{days}}\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.doki.online/support/user/add-bonus",
+          "protocol": "https",
+          "host": [
+            "api",
+            "doki",
+            "online"
+          ],
+          "path": [
+            "support",
+            "user",
+            "add-bonus"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Добавления баланса ИИ",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"template_id\": \"{{templateId}}\",\r\n    \"ai_chat_balance\": {{aiChatBalance}}\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.doki.online/support/user/add-bonus",
+          "protocol": "https",
+          "host": [
+            "api",
+            "doki",
+            "online"
+          ],
+          "path": [
+            "support",
+            "user",
+            "add-bonus"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Отправка кода",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"phone_number\": \"{{phoneNumber}}\",\r\n  \"channel\": \"{{channel}}\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.doki.online/support/verification-code/resend",
+          "protocol": "https",
+          "host": [
+            "api",
+            "doki",
+            "online"
+          ],
+          "path": [
+            "support",
+            "verification-code",
+            "resend"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Отправка письма",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"contract_id\": \"507f1f77bcf86cd799439011\",\r\n  \"recipients\": [\"created_by\", \"target_user\"]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.doki.online/support/contract/resend-emails",
+          "protocol": "https",
+          "host": [
+            "api",
+            "doki",
+            "online"
+          ],
+          "path": [
+            "support",
+            "contract",
+            "resend-emails"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Изменение данных пользователя ИП/ООО",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"user_id\": \"693a48f9d722d915e616cde9\",\r\n  \"role\": \"entrepreneur\",\r\n  \"law_name\": \"ИП Сас Роман Андреевич\",\r\n  \"law_address\": \"Камчатский край, г. Елизово, ул. Беринга, д. 22, офис 21\",\r\n  \"tax_id\": \"1234567890\",\r\n  \"ogrn\": \"1234567890123\",\r\n  \"bank_name\": \"Т-Банк\",\r\n  \"bank_account\": \"40802810900000000001\",\r\n  \"corr_account\": \"30101810400000000225\",\r\n  \"bic\": \"044525225\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.doki.online/support/user/update",
+          "protocol": "https",
+          "host": [
+            "api",
+            "doki",
+            "online"
+          ],
+          "path": [
+            "support",
+            "user",
+            "update"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Изменение данных пользователя  Физика",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"user_id\": \"692ed79dedaec28897073a2e\",\r\n  \"first_name\": \"Алексей\",\r\n  \"middle_name\": \"Васильевич\",\r\n  \"last_name\": \"Сидельников\",\r\n  \"phone_number\": \"+79259797679\",\r\n  \"email\": \"gt1258@mail.ru\",\r\n  \"passport\": {\r\n    \"number\": \"123456\",\r\n    \"issued_at\": \"2025-12-01T00:00:00\",\r\n    \"issued_by_code\": \"770-001\",\r\n    \"issued_by\": \"ОВД\",\r\n    \"registration\": \"Москва\",\r\n    \"passport_type\": \"Паспорт гражданина РФ\"\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.doki.online/support/user/update",
+          "protocol": "https",
+          "host": [
+            "api",
+            "doki",
+            "online"
+          ],
+          "path": [
+            "support",
+            "user",
+            "update"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Добавления баланса по юзер id",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"user_id\": \"{{userId}}\",\r\n  \"prepaid_contracts_count\": {{prepaidContractsCount}}\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.doki.online/support/user/add-bonus",
+          "protocol": "https",
+          "host": [
+            "api",
+            "doki",
+            "online"
+          ],
+          "path": [
+            "support",
+            "user",
+            "add-bonus"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Ручная отметка доверия инициатору",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"user_id\": \"{{userId}}\",\r\n  \"note\": \"{{note}}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.doki.online/support/user/mark-initiator-trust-manual",
+          "protocol": "https",
+          "host": [
+            "api",
+            "doki",
+            "online"
+          ],
+          "path": [
+            "support",
+            "user",
+            "mark-initiator-trust-manual"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Активация партнёра по ID пользователя",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"user_id\": \"{{userId}}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.doki.online/support/user/add-partner-info",
+          "protocol": "https",
+          "host": [
+            "api",
+            "doki",
+            "online"
+          ],
+          "path": [
+            "support",
+            "user",
+            "add-partner-info"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Пакет: сделать бессрочным",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"package_id\": \"{{packageId}}\",\r\n  \"clear_expires_at\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.doki.online/support/package/update",
+          "protocol": "https",
+          "host": [
+            "api",
+            "doki",
+            "online"
+          ],
+          "path": [
+            "support",
+            "package",
+            "update"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Пакет: отключить проверку паспорта",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"package_id\": \"{{packageId}}\",\r\n  \"remove_upgrades\": [\"passport_verification\"]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.doki.online/support/package/update",
+          "protocol": "https",
+          "host": [
+            "api",
+            "doki",
+            "online"
+          ],
+          "path": [
+            "support",
+            "package",
+            "update"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Пакет: отключить проверку телефона",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"package_id\": \"{{packageId}}\",\r\n  \"remove_upgrades\": [\"phone_verification\"]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.doki.online/support/package/update",
+          "protocol": "https",
+          "host": [
+            "api",
+            "doki",
+            "online"
+          ],
+          "path": [
+            "support",
+            "package",
+            "update"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Пакет: отключить проверку селфи",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"package_id\": \"{{packageId}}\",\r\n  \"remove_upgrades\": [\"selfie_verification\"]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.doki.online/support/package/update",
+          "protocol": "https",
+          "host": [
+            "api",
+            "doki",
+            "online"
+          ],
+          "path": [
+            "support",
+            "package",
+            "update"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Отправка коллбэка",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"contract_id\": \"{{contractId}}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.okidoki.ru/support/contract/resend-callback",
+          "protocol": "https",
+          "host": [
+            "api",
+            "okidoki",
+            "ru"
+          ],
+          "path": [
+            "support",
+            "contract",
+            "resend-callback"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer"
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "value": ""
+    }
+  ]
+}

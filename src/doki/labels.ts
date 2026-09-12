@@ -1,0 +1,122 @@
+/**
+ * Русские подписи ключей JSON ответа API / webhook / профиля.
+ * Нужны карточкам профиля и спискам токенов, чтобы не показывать сырой snake_case.
+ */
+
+/** Подписи для полей API / webhook / профиля (рус.). Неизвестные ключи гуманизируются в labelForKey. */
+export const FIELD_LABELS: Record<string, string> = {
+  user: 'Пользователь',
+  users: 'Пользователи',
+  transaction: 'Транзакция',
+  transactions: 'Транзакции',
+  contract: 'Договор',
+  contracts: 'Договоры',
+  profile: 'Профиль',
+  customer: 'Клиент',
+  customers: 'Клиенты',
+  signer: 'Подписант',
+  signers: 'Подписанты',
+  client: 'Клиент',
+  entrepreneur: 'ИП',
+  partner: 'Партнёр',
+  service: 'Сервис',
+  services: 'Сервисы',
+  payment: 'Платёж',
+  payments: 'Платежи',
+  payment_info: 'Платёжные данные',
+  history: 'История',
+  events: 'События',
+  event: 'Событие',
+  items: 'Элементы',
+  attachments: 'Вложения',
+  attachment: 'Вложение',
+  cards: 'Карточки',
+  card: 'Карточка',
+  data: 'Данные',
+  meta: 'Метаданные',
+  pagination: 'Пагинация',
+  bonus: 'Бонус',
+  bonuses: 'Бонусы',
+  balance: 'Баланс',
+  bank: 'Банк',
+  legal: 'Юр. данные',
+  contacts: 'Контакты',
+  address: 'Адрес',
+  addresses: 'Адреса',
+  document: 'Документ',
+  documents: 'Документы',
+  result: 'Результат',
+  response: 'Ответ',
+  request: 'Запрос',
+  error: 'Ошибка',
+  errors: 'Ошибки',
+  details: 'Детали',
+  settings: 'Настройки',
+  user_id: 'ID пользователя',
+  phone_number: 'Номер телефона',
+  phone: 'Телефон',
+  client_phone: 'Телефон для клиентов',
+  customer_phone: 'Телефон для клиентов',
+  public_phone: 'Телефон для клиентов',
+  email: 'E-Mail',
+  law_name: 'Полное наименование юр. лица',
+  full_law_name: 'Полное наименование юр. лица',
+  company_name: 'Название организации',
+  representative: 'В лице / основание полномочий',
+  signer_basis: 'В лице / основание полномочий',
+  in_person: 'В лице / основание полномочий',
+  basis_of_authority: 'В лице / основание полномочий',
+  law_address: 'Адрес регистрации',
+  registration_address: 'Адрес регистрации',
+  legal_address: 'Юридический адрес',
+  inn: 'ИНН',
+  tax_id: 'ИНН',
+  ogrn: 'ОГРН',
+  corr_account: 'Корр. счёт',
+  bic: 'БИК',
+  ogrnip: 'ОГРНИП',
+  kpp: 'КПП',
+  bik: 'БИК',
+  bank_name: 'Наименование банка',
+  bank_account: 'Расчётный счёт',
+  correspondent_account: 'Корр. счёт',
+  rs: 'Расчётный счёт',
+  ks: 'Корр. счёт',
+  first_name: 'Имя',
+  last_name: 'Фамилия',
+  middle_name: 'Отчество',
+  name: 'Имя / наименование',
+  role: 'Роль',
+  access_token: 'Токен доступа',
+  realty_api_key: 'Ключ Realty API',
+  contract_id: 'ID договора',
+  id: 'ID',
+  status: 'Статус',
+  link: 'Ссылка',
+  message: 'Сообщение',
+  template_id: 'ID шаблона',
+  template_name: 'Название шаблона',
+  template_full_name: 'Полное название шаблона',
+  external_id: 'Внешний ID',
+  keyword: 'Ключ поля',
+  value: 'Значение',
+  type: 'Тип',
+  promo_code: 'Промокод',
+  verification_code: 'Код верификации',
+  channel: 'Канал доставки кода',
+}
+
+/**
+ * Подпись для ключа JSON: словарь или «очеловеченный» snake/camelCase.
+ */
+export function labelForKey(key: string): string {
+  return FIELD_LABELS[key] || humanizeKey(key)
+}
+
+/** Подчёркивания и camelCase → пробелы, первая буква заглавная. */
+function humanizeKey(key: string): string {
+  return key
+    .replace(/_/g, ' ')
+    .replace(/([a-z])([A-Z])/g, '$1 $2')
+    .replace(/^\w/, (c) => c.toUpperCase())
+}

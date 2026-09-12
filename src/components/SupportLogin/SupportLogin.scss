@@ -1,0 +1,37 @@
+/* Карточка SMS-логина: ширина, поля формы, кнопки «получить код» и текст ошибок. */
+
+.oki-login {
+  max-width: 28rem;
+  margin: 2rem auto;
+}
+
+.oki-login__card {
+  padding: 1.5rem;
+}
+
+.oki-login__title {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.oki-login__lead {
+  margin-bottom: 1.25rem;
+}
+
+.oki-login__submit {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.oki-login__secondary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.oki-login__error {
+  margin-top: 1rem;
+  color: var(--oki-danger, #b42318);
+  font-size: 0.9rem;
+}
