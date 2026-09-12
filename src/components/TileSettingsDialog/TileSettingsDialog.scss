@@ -1,0 +1,349 @@
+/* Модалка настроек плитки: затемнение, диалог, поля и кнопки футера. */
+.tile-settings__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  animation: tile-settings-fade 0.12s ease-out;
+}
+
+@keyframes tile-settings-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.tile-settings__dialog {
+  background: var(--oki-surface);
+  border-radius: 14px;
+  border: 1px solid var(--oki-line);
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.25);
+  width: min(440px, 100%);
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 2rem);
+  overflow: hidden;
+  animation: tile-settings-pop 0.14s ease-out;
+}
+
+@keyframes tile-settings-pop {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.tile-settings__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.9rem 1.1rem;
+  border-bottom: 1px solid var(--oki-line);
+}
+
+.tile-settings__title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--oki-ink);
+}
+
+.tile-settings__close {
+  font: inherit;
+  font-size: 1.2rem;
+  line-height: 1;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--oki-muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+
+.tile-settings__close:hover {
+  background: #f1f5f9;
+  border-color: var(--oki-line);
+  color: var(--oki-ink);
+}
+
+.tile-settings__head-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+.tile-settings__icon-btn {
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--oki-muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+
+.tile-settings__icon-btn--danger:hover {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #dc2626;
+}
+
+.tile-settings__body {
+  padding: 1rem 1.1rem 0.5rem;
+  overflow-y: auto;
+}
+
+.tile-settings__field {
+  display: block;
+  margin-bottom: 0.85rem;
+}
+
+.tile-settings__field--order {
+  width: 100%;
+  max-width: 100%;
+  padding-bottom: 0.65rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid var(--oki-line);
+  text-align: center;
+}
+
+.tile-settings__field--order .tile-settings__label {
+  display: block;
+  text-align: center;
+}
+
+.tile-settings__field--order .tile-settings__hint--block {
+  text-align: center;
+}
+
+.tile-settings__order-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.tile-settings__input--order {
+  width: 2.75rem;
+  min-width: 2.75rem;
+  max-width: 2.75rem;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+
+.tile-settings__input--order::-webkit-outer-spin-button,
+.tile-settings__input--order::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+.tile-settings__order-of {
+  font-size: 0.88rem;
+}
+
+.tile-settings__row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin-bottom: 0.85rem;
+}
+
+.tile-settings__row2 .tile-settings__field {
+  margin-bottom: 0;
+}
+
+.tile-settings__input--mono {
+  font-family: var(--mono);
+  font-size: 0.86rem;
+}
+
+.tile-settings__code {
+  font-family: var(--mono);
+  font-size: 0.78em;
+  background: #eef2f7;
+  padding: 0.05rem 0.3rem;
+  border-radius: 4px;
+}
+
+.tile-settings__label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--oki-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.35rem;
+}
+
+.tile-settings__input {
+  width: 100%;
+  box-sizing: border-box;
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 0.55rem 0.65rem;
+  border-radius: 10px;
+  border: 1px solid var(--oki-line);
+  background: var(--oki-surface);
+  color: var(--oki-ink);
+  transition: border-color 0.12s, box-shadow 0.12s;
+}
+
+.tile-settings__input:focus {
+  outline: none;
+  border-color: var(--oki-primary);
+  box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.18);
+}
+
+.tile-settings__hint {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.78rem;
+  color: var(--oki-muted);
+  line-height: 1.35;
+}
+
+.tile-settings__meta {
+  margin: 0 0 0.85rem;
+  padding: 0.55rem 0.75rem;
+  background: #f8fafc;
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.tile-settings__meta-row {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.tile-settings__meta-row dt {
+  margin: 0;
+  font-size: 0.72rem;
+  color: var(--oki-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+}
+
+.tile-settings__meta-row dd {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--oki-ink);
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.tile-settings__mono {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+}
+
+.tile-settings__note {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  color: var(--oki-muted);
+  line-height: 1.4;
+}
+
+.tile-settings__foot {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 0.75rem 1.1rem 1rem;
+  border-top: 1px solid var(--oki-line);
+  background: #fafbfd;
+}
+
+.tile-settings__dialog--wide {
+  width: min(520px, 100%);
+}
+
+.tile-settings__op-name {
+  margin: 0 0 0.75rem;
+  font-size: 0.82rem;
+}
+
+.tile-settings__section {
+  margin-bottom: 0.75rem;
+}
+
+.tile-settings__section-title {
+  margin: 0 0 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 650;
+  color: var(--oki-ink);
+}
+
+.tile-settings__hint--block {
+  margin: 0 0 0.65rem;
+}
+
+.tile-settings__params {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.tile-settings__param {
+  border: 1px solid var(--oki-line);
+  border-radius: 10px;
+  padding: 0.55rem 0.65rem;
+  background: #f8fafc;
+}
+
+.tile-settings__param--on {
+  border-color: rgba(30, 136, 229, 0.35);
+  background: #f0f7ff;
+}
+
+.tile-settings__param-check {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  cursor: pointer;
+  font-size: 0.88rem;
+}
+
+.tile-settings__param-name {
+  font-weight: 600;
+  color: var(--oki-ink);
+}
+
+.tile-settings__param-field {
+  margin-top: 0.45rem;
+  padding-left: 1.35rem;
+}

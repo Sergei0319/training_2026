@@ -1,0 +1,83 @@
+/* Форма редактора операции: ряды полей, query-список, чекбокс Bearer, подсказки. */
+.method-editor__empty {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.method-editor__toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.75rem;
+}
+
+.method-editor__row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+}
+
+.method-editor__block {
+  margin: 0.5rem 0 0.75rem;
+}
+
+.method-editor__block-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.35rem;
+}
+
+.method-editor__query-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.method-editor__query-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr auto;
+  gap: 0.35rem;
+  margin-bottom: 0.35rem;
+  align-items: center;
+}
+
+.method-editor__hint {
+  margin: 0.25rem 0 0;
+  font-size: 0.8rem;
+}
+
+.method-editor__code {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  background: #f1f5f9;
+  padding: 0.05rem 0.25rem;
+  border-radius: 4px;
+}
+
+.field--check {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+  margin: 0.5rem 0;
+}
+
+.field--check input {
+  width: auto;
+}
+
+.field__textarea {
+  width: 100%;
+  padding: 0.5rem 0.55rem;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  font: inherit;
+  resize: vertical;
+  min-height: 120px;
+}
+
+.btn--sm {
+  font-size: 0.78rem;
+  padding: 0.28rem 0.45rem;
+}
