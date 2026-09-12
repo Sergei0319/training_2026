@@ -1,0 +1,94 @@
+/* Шапка кабинета: полоса на всю ширину, бренд, вкладки NavLink и кнопка выхода. */
+
+.oki-session-user {
+  align-self: center;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--oki-muted);
+  padding: 0 0.5rem;
+}
+
+.oki-logout {
+  margin-right: 0.35rem;
+}
+
+.oki-app__bar {
+  margin: 0 -1.25rem 1.25rem;
+  padding: 0.85rem 1.25rem;
+  background: var(--oki-bar);
+  border-bottom: 1px solid var(--oki-line);
+  box-shadow: var(--oki-shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.oki-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  background: rgba(15, 23, 42, 0.04);
+  padding: 0.25rem;
+  border-radius: 10px;
+}
+
+.oki-tabs__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 0;
+  background: transparent;
+  text-decoration: none;
+  color: var(--oki-muted);
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 600;
+  padding: 0.4rem 0.85rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s, box-shadow 0.12s;
+}
+
+.oki-tabs__btn:visited {
+  color: var(--oki-muted);
+}
+
+.oki-tabs__btn:hover {
+  color: var(--oki-ink);
+}
+
+.oki-tabs__btn--on {
+  background: var(--oki-surface);
+  color: var(--oki-ink);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+}
+
+.oki-tabs__icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+@media (min-width: 1280px) {
+  .oki-app__bar {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding-left: calc(50vw - 50% + 1.25rem);
+    padding-right: calc(50vw - 50% + 1.25rem);
+  }
+}
+
+.oki-brand {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.oki-brand__logo {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--oki-ink);
+}

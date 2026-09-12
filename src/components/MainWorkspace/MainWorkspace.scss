@@ -1,0 +1,42 @@
+/* Двухколоночная главная: стек журнала/результата и сайдбар запросов; на узком экране колонки в одну. */
+
+.oki-lead {
+  margin: 0 0 1.25rem;
+  color: var(--oki-muted);
+  font-size: 0.95rem;
+  max-width: 48rem;
+  line-height: 1.5;
+}
+
+.oki-two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.oki-two-col--result-left {
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
+}
+
+@media (max-width: 1024px) {
+  .oki-two-col,
+  .oki-two-col--result-left {
+    grid-template-columns: 1fr;
+  }
+
+  .oki-two-col .oki-sidebar {
+    order: -1;
+  }
+
+  .oki-two-col .oki-stack {
+    order: 0;
+  }
+}
+
+.oki-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 0;
+}
